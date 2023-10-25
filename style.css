@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 10fr 1fr;
+  position: relative;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  height: 50vh;
+  z-index: 1;
+}
+marquee {
+  height: 80%;
+  font-size: 5rem;
+  color: blueviolet;
+}
+header {
+  grid-column: span 12;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  flex-wrap: wrap;
+}
+header img {
+  width: 100px;
+  height: 80px;
+  margin-left: 3%;
+  animation-name: return;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-duration: 2s;
+}
+
+header img:hover {
+  cursor: pointer;
+  animation-name: turn;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-timing-function: all;
+  animation-duration: 2s;
+}
+.list {
+  list-style: none;
+  display: flex;
+  margin-right: 3%;
+  column-gap: 50px;
+  font-weight: bold;
+}
+
+.list li {
+  position: relative;
+  cursor: pointer;
+}
+.list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: brown;
+}
+
+.list li:hover::before {
+  cursor: pointer;
+  color: brown;
+  width: 100%;
+  transition: width 0.5s ease-out;
+}
+
+main {
+  grid-column: span 12;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.images {
+  display: flex;
+  gap: 30px;
+}
+.images img {
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
+}
+
+footer {
+  background-color: bisque;
+  grid-column: span 12;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  column-gap: 30px;
+  font-size: 2rem;
+  padding-right: 3%;
+}
+
+footer i:hover {
+  cursor: pointer;
+  animation-name: turn;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-timing-function: all;
+  animation-duration: 1s;
+  animation-fill-mode: none;
+}
+
+.fa-brands {
+  animation-name: return;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-duration: 1s;
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+    color: maroon;
+  }
+  to {
+    transform: rotate(360deg);
+    color: maroon;
+  }
+}
+@keyframes return {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes logo {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
